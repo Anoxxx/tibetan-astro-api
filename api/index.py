@@ -25,9 +25,10 @@ class handler(BaseHTTPRequestHandler):
         """Handle GET requests"""
         parsed_path = urlparse(self.path)
         
-        if parsed_path.path == '/health':
+        # For Vercel, support both root path and explicit paths
+        if parsed_path.path == '/health' or parsed_path.path == '/':
             self.send_health_check()
-        elif parsed_path.path == '/api/astrology/info':
+        elif parsed_path.path == '/info' or parsed_path.path == '/api/astrology/info':
             self.send_system_info()
         else:
             self.send_error(404, 'Endpoint not found')
@@ -36,9 +37,10 @@ class handler(BaseHTTPRequestHandler):
         """Handle POST requests"""
         parsed_path = urlparse(self.path)
         
-        if parsed_path.path == '/api/astrology/calculate':
+        # For Vercel, the path will be just "/" when accessed via /api/index
+        if parsed_path.path == '/' or parsed_path.path == '/api/astrology/calculate':
             self.handle_calculate()
-        elif parsed_path.path == '/api/astrology/prosperity':
+        elif parsed_path.path == '/prosperity' or parsed_path.path == '/api/astrology/prosperity':
             self.handle_prosperity()
         else:
             self.send_error(404, 'Endpoint not found')
