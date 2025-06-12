@@ -1,0 +1,9 @@
+Flask>=3.0.0
+Flask-CORS>=4.0.0
+requests>=2.31.0
+
+# Optional: For enhanced logging and monitoring
+python-json-logger>=2.0.0
+
+# Optional: For deployment
+gunicorn>=21.0.0 
