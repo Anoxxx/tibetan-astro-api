@@ -9,11 +9,7 @@ from datetime import datetime
 from http.server import BaseHTTPRequestHandler
 from urllib.parse import urlparse, parse_qs
 
-# Add the parent directory to Python path to import our modules
-current_dir = os.path.dirname(os.path.abspath(__file__))
-parent_dir = os.path.dirname(current_dir)
-sys.path.append(parent_dir)
-
+# Import modules from the same directory
 from tibetan_astro_core import TibetanAstroCalculator
 from tibetan_astro_tables import PROSPERITY_EVENT_TYPES
 
