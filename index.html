@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tibetan Astrological Calculator API</title>
+    <style>
+        body { font-family: Arial, sans-serif; max-width: 800px; margin: 50px auto; padding: 20px; }
+        .header { text-align: center; margin-bottom: 40px; }
+        .endpoint { background: #f5f5f5; padding: 15px; margin: 20px 0; border-radius: 5px; }
+        .code { background: #e8e8e8; padding: 10px; border-radius: 3px; font-family: monospace; }
+        .status { color: #28a745; font-weight: bold; }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>🏔️ Tibetan Astrological Calculator API</h1>
+        <p><strong>Nine Palaces Outer Calculation (九宫外算) System</strong></p>
+        <p class="status">✅ API Status: Online</p>
+    </div>
+
+    <div class="endpoint">
+        <h3>📡 Main Endpoint</h3>
+        <p><strong>POST</strong> <code>/api/astrology</code></p>
+        
+        <h4>Request Body:</h4>
+        <div class="code">
+{
+  "birth_year": 1990,
+  "current_year": 2025,
+  "age": 35,
+  "gender": "male",
+  "profession": "general"
+}
+        </div>
+        
+        <h4>Response:</h4>
+        <p>Complete Tibetan astrological profile with:</p>
+        <ul>
+            <li>60-cycle astrological sign (Animal + Element + Yin/Yang)</li>
+            <li>Mewa numbers (Life, Body, Power)</li>
+            <li>Obstacle analysis (RO, HO, BO, DO)</li>
+            <li>Traditional interpretations</li>
+        </ul>
+    </div>
+
+    <div class="endpoint">
+        <h3>🔍 Health Check</h3>
+        <p><strong>GET</strong> <code>/api/astrology</code></p>
+        <p>Returns API status and version information</p>
+    </div>
+
+    <div class="endpoint">
+        <h3>📝 Integration</h3>
+        <p>This API is designed for integration with <a href="https://zhengfei.info" target="_blank">zhengfei.info</a></p>
+        <p>Add to your "Miscellanies" section for traditional Tibetan astrology calculations</p>
+    </div>
+
+    <script>
+        // Simple health check
+        fetch('/api/astrology')
+            .then(response => response.json())
+            .then(data => {
+                console.log('API Health Check:', data);
+            })
+            .catch(error => {
+                console.log('API might be warming up...', error);
+            });
+    </script>
+</body>
+</html> 
