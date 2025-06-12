@@ -4,41 +4,22 @@
       "runtime": "python3.9"
     }
   },
-  "routes": [
+  "rewrites": [
     {
-      "src": "/api/astrology/calculate",
-      "dest": "/api/astrology.py"
+      "source": "/api/astrology/calculate",
+      "destination": "/api/astrology.py"
     },
     {
-      "src": "/api/astrology/prosperity", 
-      "dest": "/api/astrology.py"
+      "source": "/api/astrology/prosperity", 
+      "destination": "/api/astrology.py"
     },
     {
-      "src": "/api/astrology/info",
-      "dest": "/api/astrology.py" 
+      "source": "/api/astrology/info",
+      "destination": "/api/astrology.py" 
     },
     {
-      "src": "/health",
-      "dest": "/api/astrology.py"
-    }
-  ],
-  "headers": [
-    {
-      "source": "/api/(.*)",
-      "headers": [
-        {
-          "key": "Access-Control-Allow-Origin",
-          "value": "*"
-        },
-        {
-          "key": "Access-Control-Allow-Methods", 
-          "value": "GET, POST, PUT, DELETE, OPTIONS"
-        },
-        {
-          "key": "Access-Control-Allow-Headers",
-          "value": "Content-Type, Authorization"
-        }
-      ]
+      "source": "/health",
+      "destination": "/api/astrology.py"
     }
   ]
 } 
