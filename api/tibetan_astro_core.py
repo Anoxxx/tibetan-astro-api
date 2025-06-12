@@ -569,29 +569,4 @@ def quick_analysis(birth_year: int, current_year: int, user_age: int,
     """
     calculator = TibetanAstroCalculator()
     result = calculator.full_analysis(birth_year, current_year, user_age, user_gender, user_profession)
-    return calculator.to_human_readable(result)
-
-
-if __name__ == "__main__":
-    # Example usage and testing
-    calculator = TibetanAstroCalculator()
-    
-    # Test with document examples
-    print("Testing with 1984 birth year (should be 木阳鼠):")
-    profile_1984 = calculator.calculate_astrological_profile(1984)
-    print(f"Profile: {profile_1984}")
-    
-    mewas_1984 = calculator.calculate_mewa_numbers(profile_1984["sixty_cycle_name"])
-    print(f"Mewas: {mewas_1984}")
-    
-    print("\n" + "="*50)
-    print("Full analysis example:")
-    result = calculator.full_analysis(
-        birth_year=1990,
-        current_year=2025,
-        user_age=35,
-        user_gender="male",
-        user_profession="general"
-    )
-    
-    print(calculator.to_human_readable(result)) 
+    return calculator.to_human_readable(result) 
