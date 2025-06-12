@@ -10,10 +10,12 @@ from http.server import BaseHTTPRequestHandler
 from urllib.parse import urlparse, parse_qs
 
 # Import modules from the same directory
-from tibetan_astro_core import TibetanAstroCalculator
-from tibetan_astro_tables import PROSPERITY_EVENT_TYPES
+import tibetan_astro_core
+import tibetan_astro_tables
 
 # Initialize calculator
+TibetanAstroCalculator = tibetan_astro_core.TibetanAstroCalculator
+PROSPERITY_EVENT_TYPES = tibetan_astro_tables.PROSPERITY_EVENT_TYPES
 calculator = TibetanAstroCalculator()
 
 class handler(BaseHTTPRequestHandler):
